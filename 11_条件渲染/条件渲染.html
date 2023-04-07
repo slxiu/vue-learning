@@ -46,11 +46,14 @@
 <!--    <div v-else>not found</div>-->
 
     <!--v-if与template的配合使用-->
+    <h2 v-show="n===0">ok</h2>
     <template v-if="n === 1">
         <h2>你好</h2>
         <h2>shanghai</h2>
         <h2>shenzhen</h2>
     </template>
+    <h2 v-else-if = "n===2">Vue</h2>
+    <h2 v-else>可以了，别点了</h2>
 </div>
 <script type="text/javascript">
     const vm = new Vue({

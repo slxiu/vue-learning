@@ -20,17 +20,18 @@
     <h2>学生真实年龄:{{ stu.age.rage }}</h2>
     <h2>学生对外年龄:{{ stu.age.sage}}</h2>
     <h2 v-if="stu.sex">学生性别: {{ stu.sex }}</h2>
+    <button v-if="stu.sex" @click="changeSex">改变性别</button>
     <h2>朋友们</h2>
-     <ul v-for="(f, index) in stu.friends" :key="index">
-         <li>{{ f.name }} -- {{ f.age }}</li>
+     <ul>
+         <li v-for="(f, index) in stu.friends" :key="index">{{ f.name }} -- {{ f.age }}</li>
      </ul>
 </div>
 <script type="text/javascript">
     const vm = new Vue({
          el: '#root',
          data:{
-             name: '武汉科技大学',
-             address: '武汉',
+             name: '合肥科技大学',
+             address: '合肥',
              stu:{
                  name: 'tom',
                  age:{
@@ -50,6 +51,13 @@
                 //注意对象不能是 Vue 实例，或者 Vue 实例的根数据对象。
                 Vue.set(this.stu, 'sex', '男')
                 // this.$set(this.stu, 'sex', '男');
+            },
+            changeSex(){
+                if(this.stu.sex === '男'){
+                    this.stu.sex = '女'
+                }else{
+                    this.stu.sex = '男'
+                }
             }
         }
      })

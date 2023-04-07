@@ -48,6 +48,7 @@
     <button @click="addHobby">添加一个爱好</button> <br/>
     <button @click="updateHobby">修改第一个爱好为：开车</button> <br/>
     <button @click="removeSmoke">过滤掉爱好中的抽烟</button> <br/>
+    <button @click="addSmoke">添加抽烟</button> <br/>
     <h3>姓名：{{student.name}}</h3>
     <h3>年龄：{{student.age}}</h3>
     <h3 v-if="student.sex">性别：{{student.sex}}</h3>
@@ -99,6 +100,11 @@
            updateHobby(){
                // this.student.hobby.splice(0,1,'开车');
                this.$set(this.student.hobby, 0, '开车');
+           },
+           addSmoke(){
+                this.student.hobby.unshift(
+                    '抽烟'
+                )
            },
            removeSmoke(){
                //直接替换

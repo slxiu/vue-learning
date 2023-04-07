@@ -48,7 +48,7 @@
                     //如果写成function(){}的形式 this === window,则无法更新watch属性
                     //异步
                     this.fullName = newF +  '-' + this.lastName;
-                }, 1000);
+                }, 1000); 
             },
             lastName(newL){
                 this.fullName = this.firstName + '-' + newL;

@@ -31,6 +31,8 @@
     <button @click="numbers.b++">
         点我让b加一
     </button>
+    <h3>e的值是:{{ numbers.d.e}}</h3>
+    <button @click="numbers.d.e++">让e的值加一</button>
     <h1>
         测试vue自身监测数据属性
         {{ numbers.d.e }}
